@@ -1,0 +1,51 @@
+====================ERROR 26/9/2023, 21:04:31=========================
+{"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":216,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(perlaura64@outlook.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Ricardo","Pérez","perlaura64@outlook.com","$2b$10$6vKscBIO1W0R1NuaQMXPMe/lTEX6b2R78fw95JidJAzhdj6vgylgy","2023-09-27 03:04:30.634 +00:00","2023-09-27 03:04:30.634 +00:00"]},"original":{"length":216,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(perlaura64@outlook.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Ricardo","Pérez","perlaura64@outlook.com","$2b$10$6vKscBIO1W0R1NuaQMXPMe/lTEX6b2R78fw95JidJAzhdj6vgylgy","2023-09-27 03:04:30.634 +00:00","2023-09-27 03:04:30.634 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"}
+
+====================ERROR 26/9/2023, 21:05:05=========================
+{"status":400,"error":"Invalid data","message":["La longitud del nombre de ser entre 2 y 50 caracteres"]}
+
+====================ERROR 28/9/2023, 21:58:44=========================
+{"name":"SequelizeDatabaseError","parent":{"length":129,"name":"error","severity":"ERROR","code":"22P02","position":"1360","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firstname\" AS \"Conversation.Participants.User.firstname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = ':id';"},"original":{"length":129,"name":"error","severity":"ERROR","code":"22P02","position":"1360","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firstname\" AS \"Conversation.Participants.User.firstname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = ':id';"},"sql":"SELECT \"Participant\".\"UserId\", \"Participant\".\"ConversationId\", \"Conversation\".\"id\" AS \"Conversation.id\", \"Conversation\".\"title\" AS \"Conversation.title\", \"Conversation\".\"conversationImage\" AS \"Conversation.conversationImage\", \"Conversation\".\"type\" AS \"Conversation.type\", \"Conversation\".\"createdBy\" AS \"Conversation.createdBy\", \"Conversation\".\"createdAt\" AS \"Conversation.createdAt\", \"Conversation->Participants\".\"ConversationId\" AS \"Conversation.Participants.ConversationId\", \"Conversation->Participants\".\"UserId\" AS \"Conversation.Participants.UserId\", \"Conversation->Participants->User\".\"id\" AS \"Conversation.Participants.User.id\", \"Conversation->Participants->User\".\"firstname\" AS \"Conversation.Participants.User.firstname\", \"Conversation->Participants->User\".\"lastname\" AS \"Conversation.Participants.User.lastname\", \"Conversation->Participants->User\".\"avatar\" AS \"Conversation.Participants.User.avatar\" FROM \"Participants\" AS \"Participant\" LEFT OUTER JOIN \"Conversations\" AS \"Conversation\" ON \"Participant\".\"ConversationId\" = \"Conversation\".\"id\" LEFT OUTER JOIN \"Participants\" AS \"Conversation->Participants\" ON \"Conversation\".\"id\" = \"Conversation->Participants\".\"ConversationId\" LEFT OUTER JOIN \"Users\" AS \"Conversation->Participants->User\" ON \"Conversation->Participants\".\"UserId\" = \"Conversation->Participants->User\".\"id\" WHERE \"Participant\".\"UserId\" = ':id';","parameters":{}}
+
+====================ERROR 29/9/2023, 20:18:16=========================
+{"status":400,"error":"User does not exist mid","message":"You need register before login"}
+
+====================ERROR 29/9/2023, 20:18:21=========================
+{"status":400,"error":"User does not exist mid","message":"You need register before login"}
+
+====================ERROR 29/9/2023, 20:18:41=========================
+{"status":400,"error":"User does not exist mid","message":"You need register before login"}
+
+====================ERROR 29/9/2023, 22:05:57=========================
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-09-16T05:24:16.000Z"}
+
+====================ERROR 29/9/2023, 22:05:57=========================
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-09-16T05:24:16.000Z"}
+
+====================ERROR 29/9/2023, 22:05:57=========================
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-09-16T05:24:16.000Z"}
+
+====================ERROR 29/9/2023, 22:05:57=========================
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-09-16T05:24:16.000Z"}
+
+====================ERROR 29/9/2023, 22:15:42=========================
+{"status":400,"error":"User does not exist mid","message":"You need register before login"}
+
+====================ERROR 29/9/2023, 22:16:19=========================
+{"status":400,"error":"User does not exist mid","message":"You need register before login"}
+
+====================ERROR 29/9/2023, 22:27:09=========================
+{"status":400,"error":"Invalid data","message":["El password debe ser minimo 8 caracteres, una mayuscula, una minuscula"]}
+
+====================ERROR 29/9/2023, 22:36:15=========================
+{"status":401,"message":"No authorization header"}
+
+====================ERROR 29/9/2023, 22:36:59=========================
+{"status":401,"message":"No authorization header"}
+
+====================ERROR 29/9/2023, 22:37:49=========================
+{"status":401,"message":"No authorization header"}
+
+====================ERROR 2/10/2023, 19:01:07=========================
+{"status":401,"message":"No authorization header"}
+

@@ -1,0 +1,64 @@
+====================ERROR 2/10/2023, 20:01:13=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Shalalala de uevo lo intento","senderId":6,"conversationId":1} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 2/10/2023, 20:01:41=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Shalalala de uevo lo intento","senderId":6,"conversationId":1} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T01:57:53.000Z"} 
+
+====================ERROR 2/10/2023, 20:02:55=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Shalalala de uevo lo intento","senderId":6,"conversationId":1} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de uevo lo intento",6,":id","2023-10-03 02:02:55.502 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de uevo lo intento",6,":id","2023-10-03 02:02:55.502 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de uevo lo intento",6,":id","2023-10-03 02:02:55.502 +00:00"]} 
+
+====================ERROR 2/10/2023, 20:03:40=========================
+req: POST /api/v1/messages/conversation/:Id body: {"content":"Shalalala de uevo lo intento","senderId":6,"conversationId":1} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de uevo lo intento",6,":Id","2023-10-03 02:03:39.967 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de uevo lo intento",6,":Id","2023-10-03 02:03:39.967 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de uevo lo intento",6,":Id","2023-10-03 02:03:39.967 +00:00"]} 
+
+====================ERROR 2/10/2023, 20:04:03=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Shalalala de nuevo lo intento","senderId":6,"conversationId":1} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de nuevo lo intento",6,":id","2023-10-03 02:04:03.165 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de nuevo lo intento",6,":id","2023-10-03 02:04:03.165 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de nuevo lo intento",6,":id","2023-10-03 02:04:03.165 +00:00"]} 
+
+====================ERROR 2/10/2023, 20:08:41=========================
+req: POST /api/v1/messages/conversation/1 body: {"content":"Shalalala de nuevo lo intento","senderId":6} 
+res: status: undefined, {"name":"SequelizeForeignKeyConstraintError","parent":{"length":306,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (conversationId)=(1) no está presente en la tabla «Conversations».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2607","routine":"ri_ReportViolation","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de nuevo lo intento",6,"1","2023-10-03 02:08:40.569 +00:00"]},"original":{"length":306,"name":"error","severity":"ERROR","code":"23503","detail":"La llave (conversationId)=(1) no está presente en la tabla «Conversations».","schema":"public","table":"Messages","constraint":"Messages_conversationId_fkey","file":"ri_triggers.c","line":"2607","routine":"ri_ReportViolation","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de nuevo lo intento",6,"1","2023-10-03 02:08:40.569 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Shalalala de nuevo lo intento",6,"1","2023-10-03 02:08:40.569 +00:00"],"fields":null} 
+
+====================ERROR 2/10/2023, 20:37:09=========================
+req: GET /api/v1/users body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T02:10:08.000Z"} 
+
+====================ERROR 2/10/2023, 20:37:09=========================
+req: GET /api/v1/conversations/6 body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T02:10:08.000Z"} 
+
+====================ERROR 2/10/2023, 20:37:09=========================
+req: GET /api/v1/users body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T02:10:08.000Z"} 
+
+====================ERROR 2/10/2023, 20:37:09=========================
+req: GET /api/v1/conversations/6 body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T02:10:08.000Z"} 
+
+====================ERROR 2/10/2023, 21:09:15=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 2/10/2023, 21:10:01=========================
+req: GET /api/v1/users body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T03:02:12.000Z"} 
+
+====================ERROR 2/10/2023, 22:13:51=========================
+req: GET /api/v1/users body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-03T04:10:13.000Z"} 
+
+====================ERROR 2/10/2023, 22:17:26=========================
+req: POST /api/v1/users/login body: {"password":"Teresa1234$","email":"tere@gmail.com"} 
+res: status: 401, {"error":"Email verification needed","message":"Look at your email messages for a verification email"} 
+
+====================ERROR 2/10/2023, 22:18:30=========================
+req: POST /api/v1/users/login body: {"password":"teresa1234$","email":"tere@gmail.com"} 
+res: status: 400, {"error":"Incorrect password","message":"The password does not match with the user"} 
+
+====================ERROR 2/10/2023, 22:21:42=========================
+req: POST /api/v1/conversations body: {"userId":6,"participantId":11} 
+res: status: 401, {"message":"No authorization header"} 
+

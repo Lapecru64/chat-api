@@ -1,0 +1,297 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "chat-Api",
+    "contact": "perlaura64@outlook.com",
+    "description": "An API that resembles sending WhatsApp messages",
+    "version": "1.0"
+  }, 
+  "paths": {
+    "/api/v1/users": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "create user",
+        "operationId": "createuser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/createuserrequest"
+                  },
+                  {
+                    "example": {
+                      "firstname": "Rosa",
+                      "lastname": "Hernández",
+                      "email": "rosa@gmail.com",
+                      "password": "Rosa1234$"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "firstname": "Rosa",
+                "lastname": "Hernández",
+                "email": "rosa@gmail.com",
+                "password": "Rosa1234$"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "get all users",
+        "operationId": "getallusers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/users/login": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "login user",
+        "operationId": "loginuser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/loginuserrequest"
+                  },
+                  {
+                    "example": {
+                      "email": "perlaura64@outlook.com",
+                      "password": "Aperlam1964$"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "perlaura64@outlook.com",
+                "password": "Aperlam1964$"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/conversations": {
+      "post": {
+        "tags": [
+          "conversations"
+        ],
+        "summary": "create conversation",
+        "operationId": "createconversation",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/conversations/group": {
+      "post": {
+        "tags": [
+          "conversations"
+        ],
+        "summary": "create group conversation",
+        "operationId": "creategroupconversation",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/conversations/{id}": {
+      "get": {
+        "tags": [
+          "conversations"
+        ],
+        "summary": "get all conversations by user",
+        "operationId": "getallconversationsbyuser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/messages/conversation/{id}": {
+      "post": {
+        "tags": [
+          "messages"
+        ],
+        "summary": "create new messages",
+        "operationId": "createnewmessages",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "messages"
+        ],
+        "summary": "get conversation messages",
+        "operationId": "getconversationmessages",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "createuserrequest": {
+        "title": "createuserrequest",
+        "required": [
+          "firstname",
+          "lastname",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "firstname": "Rosa",
+          "lastname": "Hernández",
+          "email": "rosa@gmail.com",
+          "password": "Rosa1234$"
+        }
+      },
+      "loginuserrequest": {
+        "title": "loginuserrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "perlaura64@outlook.com",
+          "password": "Aperlam1964$"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "users"
+    },
+    {
+      "name": "conversations"
+    },
+    {
+      "name": "messages"
+    }
+  ]
+}

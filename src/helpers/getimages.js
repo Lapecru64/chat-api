@@ -1,7 +1,7 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
-async function getImages(dirPath) {
+async function getimages(dirPath) {
   const formats = [".png", ".gif", ".jpg", ".jpeg", ".webp", ".svg"];
   // dirPath es una ruta dentro de src ./src/...
   // obtenemos la ruta del directorio de las imagenes
@@ -16,4 +16,4 @@ async function getImages(dirPath) {
   }));
 }
 
-module.exports = getImages;
+module.exports = getimages;

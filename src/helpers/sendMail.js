@@ -2,7 +2,7 @@ const transporter = require("./mailer");
 const ejs = require("ejs");
 const path = require("path");
 const { signCofirmToken } = require("./signToken");
-const getImages = require("./getImages");
+const getimages = require("./getimages");
 require("dotenv").config();
 
 const sendMail = (email, subject, template, attachments) => {
@@ -28,7 +28,7 @@ const sendWelcomeEmail = async (email, data) => {
     url: process.env.FRONT_URL,
   });
 
-  const attachments = await getImages("/views/welcome/images");
+  const attachments = await getimages("/views/welcome/images");
 
   sendMail(email, "Bienvenido a academlo chat", template, attachments);
 };
